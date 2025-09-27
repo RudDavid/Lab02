@@ -26,23 +26,24 @@ int main() {
   float ceshka;
 
   eshka = 6;
-  lenght = 13.0;
-  outerCylinderRadius = 4.7;
-  innerCylinderRadius = 4.5;
+  lenght = 13.0f;
+  outerCylinderRadius = 4.7f;
+  innerCylinderRadius = 4.5f;
 
   while (outerCylinderRadius <= 5) {
-    ceshka = (2.0f * PI * eshka * electricConstant * lenght) / (log(outerCylinderRadius / innerCylinderRadius));
+    ceshka = (2.0f * PI * eshka * electricConstant * lenght) / log(outerCylinderRadius / innerCylinderRadius);
     cout << "R = " << outerCylinderRadius;
     cout << "\t\tC = " << ceshka << endl;
-    outerCylinderRadius += 0.1;
-    }
-    outerCylinderRadius += 0.9;
+    outerCylinderRadius += 0.1f;
+  }
+    outerCylinderRadius += 0.9f;
   
     do {
-      ceshka = (2 * PI * eshka * electricConstant * lenght) / (log(outerCylinderRadius / innerCylinderRadius));
+      ceshka = (2.0f * PI * eshka * electricConstant * lenght) / log(outerCylinderRadius / innerCylinderRadius);
       cout << "R = " << outerCylinderRadius;
       cout << "\t\tC = " << ceshka << endl;
-      outerCylinderRadius += 1;
+      outerCylinderRadius += 1.0f;
     } while (outerCylinderRadius <= 10);
   return 0;
 }
+
