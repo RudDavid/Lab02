@@ -9,41 +9,50 @@
 
 using namespace std;
 
-int main() {
-  // Вводим число пи
+// Вводим число пи
   const double PI = 3.141592;
   // Электрическая постоянная
-  const double electricConstant = 8.85 / 100;           
+  const double electricConstant = 8.85 / 100; 
 
+int main() {          
   // Диэлектрическая проницаемость стекла 
-  int eshka;
+  double eshka;
   // Радиус внутреннего цилиндра
-  float innerCylinderRadius;
+  double innerCylinderRadius;
   // Радиус внешнего цилиндра
-  float outerCylinderRadius;
+  double outerCylinderRadius;
   // Высота цилиндров
-  float lenght;                                              
-  float ceshka;
+  double lenght;                                              
+  double ceshka;
+  double stepOfOuterCylinderRadius_1;
+  double stepOfOuterCylinderRadius_2;
+  double border_1;
+  double border_2;
+  
+  border_1 = 5.0;
+  border_2 = 10.0;
+  stepOfOuterCylinderRadius_1 = 0.1;
+  stepOfOuterCylinderRadius_2 = 1;
+  eshka = 6.0;
+  lenght = 13.0;
+  outerCylinderRadius = 4.7;
+  innerCylinderRadius = 4.5;
 
-  eshka = 6;
-  lenght = 13.0f;
-  outerCylinderRadius = 4.7f;
-  innerCylinderRadius = 4.5f;
-
-  while (outerCylinderRadius <= 5) {
-    ceshka = (2.0f * PI * eshka * electricConstant * lenght) / log(outerCylinderRadius / innerCylinderRadius);
+  while (outerCylinderRadius <= border_1) {
+    ceshka = (2.0 * PI * eshka * electricConstant * lenght) / log(outerCylinderRadius / innerCylinderRadius);
     cout << "R = " << outerCylinderRadius;
     cout << "\t\tC = " << ceshka << endl;
-    outerCylinderRadius += 0.1f;
+    outerCylinderRadius += stepOfOuterCylinderRadius_1;
   }
-    outerCylinderRadius += 0.9f;
+    outerCylinderRadius += 0.9;
   
-    do {
-      ceshka = (2.0f * PI * eshka * electricConstant * lenght) / log(outerCylinderRadius / innerCylinderRadius);
+  do {
+      ceshka = (2.0 * PI * eshka * electricConstant * lenght) / log(outerCylinderRadius / innerCylinderRadius);
       cout << "R = " << outerCylinderRadius;
       cout << "\t\tC = " << ceshka << endl;
-      outerCylinderRadius += 1.0f;
-    } while (outerCylinderRadius <= 10);
+      outerCylinderRadius += stepOfOuterCylinderRadius_2;
+    } while (outerCylinderRadius <= border_2);
   return 0;
 }
+
 
