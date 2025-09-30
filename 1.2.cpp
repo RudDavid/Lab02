@@ -9,7 +9,7 @@
 
 using namespace std;
 
-// Вводим число пи
+  // Инициализируем число пи
   const double PI = 3.141592;
   // Электрическая постоянная
   const double electricConstant = 8.85 / 100; 
@@ -24,35 +24,37 @@ int main() {
   // Высота цилиндров
   double lenght;                                              
   double ceshka;
-  double stepOfOuterCylinderRadius_1;
-  double stepOfOuterCylinderRadius_2;
-  double border_1;
-  double border_2;
+  double stepOfOuterCylinderRadius1;
+  double stepOfOuterCylinderRadius2;
+  double border1;
+  double border2;
   
-  border_1 = 5.0;
-  border_2 = 10.0;
-  stepOfOuterCylinderRadius_1 = 0.1;
-  stepOfOuterCylinderRadius_2 = 1;
-  eshka = 6.0;
-  lenght = 13.0;
-  outerCylinderRadius = 4.7;
-  innerCylinderRadius = 4.5;
+  cout << "Enter border1 = "; cin >> border1;
+  cout << "Enter border2 = "; cin >> border2;
+  cout << "Enter stepOfOuterCylinderRadius1 = "; cin >> stepOfOuterCylinderRadius1;
+  cout << "Enter stepOfOuterCylinderRadius2 = "; cin >> stepOfOuterCylinderRadius2;
+  cout << "Enter eshka = "; cin >> eshka;
+  cout << "Enter lenght = "; cin >> lenght;
+  cout << "Enter outerCylinderRadius1 = "; cin >> outerCylinderRadius1;
+  cout << "Enter innerCylinderRadius1 = "; cin >> innerCylinderRadius1;
 
-  while (outerCylinderRadius <= border_1) {
-    ceshka = (2.0 * PI * eshka * electricConstant * lenght) / log(outerCylinderRadius / innerCylinderRadius);
-    cout << "R = " << outerCylinderRadius;
-    cout << "\t\tC = " << ceshka << endl;
-    outerCylinderRadius += stepOfOuterCylinderRadius_1;
+  while (outerCylinderRadius <= border1) {
+    ceshka = 2.0 * PI * eshka * electricConstant * lenght / log(outerCylinderRadius / innerCylinderRadius);
+    cout << "R = " << outerCylinderRadius
+         << "\t\tC = " << ceshka << endl;
+    outerCylinderRadius += stepOfOuterCylinderRadius1;
   }
-    outerCylinderRadius += 0.9;
+  outerCylinderRadius += 0.9;
   
   do {
-      ceshka = (2.0 * PI * eshka * electricConstant * lenght) / log(outerCylinderRadius / innerCylinderRadius);
-      cout << "R = " << outerCylinderRadius;
-      cout << "\t\tC = " << ceshka << endl;
-      outerCylinderRadius += stepOfOuterCylinderRadius_2;
-    } while (outerCylinderRadius <= border_2);
+      ceshka = 2.0 * PI * eshka * electricConstant * lenght / log(outerCylinderRadius / innerCylinderRadius);
+      cout << "R = " << outerCylinderRadius
+           << "\t\tC = " << ceshka << endl;
+      outerCylinderRadius += stepOfOuterCylinderRadius2;
+  } while (outerCylinderRadius <= border2);
+  
   return 0;
 }
+
 
 
